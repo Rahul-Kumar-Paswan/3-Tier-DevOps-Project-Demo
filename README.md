@@ -13,8 +13,6 @@ This is a **3-tier full-stack web application** with:
 - **Authentication:** JWT-based (login/register)
 - **Role-based Access:** Admin and User roles
 
-> ✅ Designed for local development, CI/CD pipelines, and cloud-native deployments.
-
 ---
 
 ## 🧰 Technologies Used
@@ -122,15 +120,21 @@ The client now displays an animated banner welcoming you to **Rahulverse**.
 ## 🛡️ Authentication & Roles
 
 JWT tokens are stored in localStorage.
+
 React frontend protects routes using ProtectedRoute.js.
+
 Role-based access control via middleware (middleware/role.js).
 
 ## 📦 Future Enhancements
 
 ✅ Dockerize for containerized deployments
+
 ✅ CI/CD with GitHub Actions or Jenkins
+
 ✅ Helm chart for Kubernetes deployment
+
 ✅ Logging & Monitoring (Prometheus, Grafana)
+
 ✅ Environment-based configurations
 
 ## 📝 License
