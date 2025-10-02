@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: 3tierdevsecops-mysql
+    env_file:
+      - ./api/.env.docker
+    volumes:
+      - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - 3tierdevsecops-app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "-p$MYSQL_ROOT_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # Optional: Expose port for local testing (not required for internal network use)
+    # ports:
+    #   - "3306:3306"
+
+  backend:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: 3tierdevsecops-backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      mysql-db:
+        condition: service_healthy  # ✅ Waits until MySQL passes healthcheck
+    networks:
+      - 3tierdevsecops-app-network
+    env_file:
+      - ./api/.env.docker
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: 3tierdevsecops-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - 3tierdevsecops-app-network
+    env_file:
+      - ./client/.env.docker
+
+networks:
+  3tierdevsecops-app-network:
+    driver: bridge
