@@ -55,7 +55,7 @@ Access to a Container Registry (e.g., Docker Hub) to push the Docker images.
 ## 📁 Project Structure
 
 This project is organized as follows:
-
+```bash
 3-Tier-DevOps-Project-Demo/
 ├── LICENSE                              # Project license file
 ├── README.md                            # This documentation file
@@ -77,7 +77,7 @@ This project is organized as follows:
 │   ├── mysql-initdb-config.yaml         # MySQL initialization script config
 │   ├── mysql-secret.yaml                # MySQL root user secret and password
 │   └── sc.yaml                          # StorageClass for persistent volumes (optional)
-
+```
 
 ---
 
