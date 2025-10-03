@@ -59,15 +59,10 @@ This project is organized as follows:
 3-Tier-DevOps-Project-Demo/
 
 ├── LICENSE                              # Project license file
-
 ├── README.md                            # This documentation file
-
 ├── api/                                 # Backend (Node.js + Express) code
-
 │   ├── Dockerfile                       # Dockerfile for building the backend image
-
 │   ├── app.js                           # Main app file for the backend
-
 │   ├── ..............                   # Backend route controllers
 │
 
