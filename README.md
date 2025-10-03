@@ -57,17 +57,25 @@ Access to a Container Registry (e.g., Docker Hub) to push the Docker images.
 This project is organized as follows:
 
 3-Tier-DevOps-Project-Demo/
+
 ├── LICENSE                              # Project license file
+
 ├── README.md                            # This documentation file
+
 ├── api/                                 # Backend (Node.js + Express) code
+
 │   ├── Dockerfile                       # Dockerfile for building the backend image
+
 │   ├── app.js                           # Main app file for the backend
+
 │   ├── ..............                   # Backend route controllers
 │
+
 ├── client/                              # Frontend (React) code
 │   ├── Dockerfile                       # Dockerfile for building the frontend image
 │   ├── default.conf.template            # NGINX configuration template
 │   └── src/....                         # React components and app logic
+
 ├── kubernetes/                          # Kubernetes deployment files
 │   ├── app-configs.yaml                 # Kubernetes ConfigMaps and Secrets
 │   ├── backend-deployment.yaml          # Backend Kubernetes deployment and service
