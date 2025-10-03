@@ -1,0 +1,38 @@
+---
+# ConfigMap for Frontend Environment Variables
+# This ConfigMap holds the backend hostname for the frontend application.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: prod
+  labels:
+    app: frontend
+data:
+  BACKEND_HOST: "backend-svc"  # Backend service hostname for frontend
+
+---
+# ConfigMap for Backend Environment Variables
+# This ConfigMap holds the MySQL hostname for the backend application.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: prod
+  labels:
+    app: backend
+data:
+  MYSQL_HOST: "mysql-db"  # MySQL service hostname for backend
+
+---
+# ConfigMap for MySQL Configuration
+# This ConfigMap holds MySQL-related configurations, such as the database name.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+  namespace: prod
+  labels:
+    app: mysql-db
+data:
+  MYSQL_DATABASE: crud_app  # Name of the database to be created
