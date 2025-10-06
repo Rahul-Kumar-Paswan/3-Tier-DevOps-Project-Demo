@@ -17,6 +17,12 @@ It builds upon the **local** and **Docker Compose** versions of this project by 
 
 ---
 
+## 🧩 Architecture Diagram / Workflow
+
+![alt text](./screenshots/architecture-diagram.png)
+
+---
+
 ## 🔄 Environment Handling Across Stages
 
 We use different strategies for environment variables:
@@ -252,6 +258,13 @@ kubectl delete configmap --all -n prod
 kubectl delete secret --all -n prod
 kubectl delete ns prod
 ```
+---
+
+## 📸 Screenshots / Demo
+
+![alt text](./screenshots/image.png)
+
+---
 
 ## 🚀 Future Enhancements
 
