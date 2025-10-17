@@ -18,7 +18,7 @@ public_subnet_availability_zones = ["ap-south-1a", "ap-south-1b"]
 private_subnet_availability_zones = ["ap-south-1a", "ap-south-1b"]
 
 # EC2
-instance_type = "t3.micro"
+instance_type = "t3.small"
 key_name = "AWS_Key_Pair"  # Your actual key name
 volume_size = 8
 volume_type = "gp2"
