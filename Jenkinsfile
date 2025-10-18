@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Preparation') {
             steps {
-                echo "📦 Branch Name: ${BRANCH_NAME} bvabjhvbv oh jo mnakjncv"
+                echo "📦 Branch Name: ${BRANCH_NAME} jbcabc oh jo mnakjncv"
             }
         }
 
