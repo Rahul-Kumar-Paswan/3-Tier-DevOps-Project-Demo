@@ -17,7 +17,7 @@ pipeline {
                 expression { BRANCH_NAME == 'dummy-1' }
             }
             steps {
-                echo "✅ This pipeline was triggered by a merge into 'dummy' branch."
+                echo "✅ This pipeline was triggered by a merge into 'dummy-1' branch."
             }
         }
 
