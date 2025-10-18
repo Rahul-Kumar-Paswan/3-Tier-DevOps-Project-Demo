@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Preparation') {
             steps {
-                echo "📦 Branch Name: ${BRANCH_NAME} jbcabc"
+                echo "📦 Branch Name: ${BRANCH_NAME} jbcabc checked manually and it worked trying again"
             }
         }
 
