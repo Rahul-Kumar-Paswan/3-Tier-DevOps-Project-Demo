@@ -14,7 +14,7 @@ pipeline {
 
         stage('Trigger Check') {
             when {
-                expression { BRANCH_NAME == 'dummy' }
+                expression { BRANCH_NAME == 'dummy-1' }
             }
             steps {
                 echo "✅ This pipeline was triggered by a merge into 'dummy' branch."
