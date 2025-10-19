@@ -23,11 +23,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                git branch: 'cicd', credentialsId: 'git-token', url: 'https://github.com/Rahul-Kumar-Paswan/3-Tier-DevOps-Project-Demo.git'
-            }
-        }
 
         stage('Terraform Init & Apply') {
             when { expression { params.ACTION == 'create' } }
