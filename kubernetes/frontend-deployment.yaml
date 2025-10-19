@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: prod
+  labels:
+    app: frontend
+    component: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+        component: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: ${FRONTEND_IMAGE}
+          ports:
+            - containerPort: 80
+          env:
+            - name: BACKEND_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: frontend-config
+                  key: BACKEND_HOST  # Get the Backend hostname from ConfigMap
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+  namespace: prod
+spec:
+  selector:
+    app: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer

@@ -1,0 +1,11 @@
+# Ignore Terraform files
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+
+# Ignore AWS credentials file
+.aws/
+
+# Ignore local environment variable files
+# *.tfvars
